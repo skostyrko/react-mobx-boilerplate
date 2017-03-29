@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "javascript.validate.enable": false,
+  "standard.enable": true,
+  "flowide.enabled": true,
+  "enable_typescript_language_service": false
+}
