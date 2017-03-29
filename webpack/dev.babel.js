@@ -31,7 +31,8 @@ export default merge(baseConfig, {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
+              importLoaders: 1
             }
           },
           'postcss-loader'
@@ -52,7 +53,12 @@ export default merge(baseConfig, {
               localIdentName: '[name]__[local]__[hash:base64:5]'
             }
           },
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: 'inline'
+            }
+          }
         ]
       }
     ]

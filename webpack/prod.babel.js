@@ -15,7 +15,7 @@ export default merge(baseConfig, {
       {
         test: /\.global\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: 'css-loader',
+          use: 'css-loader?importLoaders=1!postcss-loader?sourceMap=inline',
           fallback: 'style-loader'
         })
       },
@@ -25,7 +25,7 @@ export default merge(baseConfig, {
         test: /^((?!\.global).)*\.scss$/,
         use: ExtractTextPlugin.extract({
           use: {
-            loader: 'css-loader?importLoaders=1!postcss-loader',
+            loader: 'css-loader?importLoaders=1!postcss-loader?sourceMap=inline',
             options: {
               modules: true,
               importLoaders: 1,

@@ -1,5 +1,5 @@
-@import '../../styles/_variables.scss';
+@import '../../styles/general.scss';
 
 .bordered {
-  border: red;
+  border-color: $red;
 }
