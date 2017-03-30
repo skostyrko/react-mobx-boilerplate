@@ -3,6 +3,7 @@
       "EditorConfig.EditorConfig",
       "flowtype.flow-for-vscode",
       "chenxsan.vscode-standardjs",
-      "shinnn.stylelint"
+      "shinnn.stylelint",
+      "Orta.vscode-jest"
     ]
 }
