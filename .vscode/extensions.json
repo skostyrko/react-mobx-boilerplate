@@ -1,7 +1,7 @@
 {
     "recommendations": [
       "EditorConfig.EditorConfig",
-      "gcazaciuc.vscode-flow-ide",
+      "flowtype.flow-for-vscode",
       "chenxsan.vscode-standardjs",
       "shinnn.stylelint"
     ]
