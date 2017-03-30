@@ -97,6 +97,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/app/**/*.{js,jsx}",
+      "!**/app/**/*.stories.{js,jsx}",
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
