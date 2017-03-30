@@ -25,12 +25,7 @@ export default merge(baseConfig, {
         test: /^((?!\.global).)*\.scss$/,
         use: ExtractTextPlugin.extract({
           use: {
-            loader: 'css-loader?importLoaders=1!postcss-loader?sourceMap=inline',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '[name]__[local]__[hash:base64:5]'
-            }
+            loader: 'css-loader?importLoaders=1!postcss-loader?sourceMap=inline'
           }
         })
       }
@@ -47,7 +42,6 @@ export default merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new webpack.optimize.DedupePlugin(),
     new BabiliPlugin(),
     new ExtractTextPlugin('style.css'),
 
