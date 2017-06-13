@@ -1,8 +1,14 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   "javascript.validate.enable": false,
-  "standard.enable": true,
+  "typescript.validate.enable": false,
+  "eslint.enable": true,
   "flow.enabled": true,
   "flow.useNPMPackagedFlow": true,
-  "enable_typescript_language_service": false
+  "search.exclude": {
+    "./tmp": true,
+    "coverage/": true,
+    "test-report/": true,
+    "build/": true
+  }
 }

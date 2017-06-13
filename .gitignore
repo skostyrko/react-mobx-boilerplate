@@ -114,3 +114,11 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,macos,windows
+
+.idea/
+
+#unit tests report
+test-report
+
+# Jest Cache Folder
+.tmp

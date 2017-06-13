@@ -2,8 +2,12 @@ import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import merge from 'webpack-merge'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import BabiliPlugin from 'babili-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 import baseConfig from './base.babel'
+
+// import BabiliPlugin from 'babili-webpack-plugin'
+
+const NODE_ENV = process.env.NODE_ENV || 'production'
 
 export default merge(baseConfig, {
   devtool: 'cheap-module-source-map',
@@ -32,6 +36,12 @@ export default merge(baseConfig, {
     ]
   },
 
+  resolve: {
+    alias: {
+      config: path.join(__dirname, 'config', `${NODE_ENV}.config`)
+    }
+  },
+
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -42,7 +52,13 @@ export default merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new BabiliPlugin(),
+    new ExtractTextPlugin('style.[contenthash].css'),
+    new CopyWebpackPlugin([{ from: path.join(__dirname, '/deploy') }], { copyUnmodified: true }),
+
+    // Temporary disabled due to `process out of memory` issue https://github.com/babel/babili/issues/332
+    // Using babel-preset-babili instead
+    // new BabiliPlugin(),
+
     new ExtractTextPlugin('style.css'),
 
     new HtmlWebpackPlugin({

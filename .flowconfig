@@ -1,5 +1,8 @@
 [ignore]
 .*/node_modules/stylelint/.*
+^config$
+.*test.js
+
 [include]
 .*/app/.*
 
@@ -9,6 +12,7 @@
 
 [options]
 esproposal.decorators=ignore
+unsafe.enable_getters_and_setters=true
 module.name_mapper='.*\(.scss\)' -> 'CSSModule'
 module.system=haste
 strip_root=true

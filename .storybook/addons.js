@@ -1,8 +1,13 @@
 //  To get our default addons (actions and links)
-import '@kadira/storybook/addons'
+import '@storybook/addon-actions/register'
+import '@storybook/addon-links/register'
 //  Knobs
-// https://github.com/storybooks/storybook-addon-knobs
-import '@kadira/storybook-addon-knobs/register'
+// https://github.com/storybooks/storybook/tree/master/addons/knobs
+import '@storybook/addon-knobs/register'
 // notes
-// https://github.com/storybooks/storybook-addon-notes
-import '@kadira/storybook-addon-notes/register'
+// https://github.com/storybooks/storybook/tree/master/addons/notes
+import '@storybook/addon-notes/register'
+
+// Community addons
+import 'storybook-addon-props/register';
+import 'react-storybook-addon-backgrounds/register';

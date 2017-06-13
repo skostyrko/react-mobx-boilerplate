@@ -5,8 +5,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import DashboardPlugin from 'webpack-dashboard/plugin'
 import baseConfig from './base.babel'
 
-const port = process.env.PORT || 3000
-const publicPath = `http://localhost:${port}/`
+const NODE_ENV = process.env.NODE_ENV || 'development'
+const PORT = process.env.PORT || 3000
+const publicPath = `http://localhost:${PORT}/`
 
 export default merge(baseConfig, {
   devtool: 'cheap-module-eval-source-map',
@@ -15,7 +16,7 @@ export default merge(baseConfig, {
     'react-hot-loader/patch',
     'babel-polyfill',
     'whatwg-fetch',
-    `webpack-dev-server/client?http://localhost:${port}/`,
+    `webpack-dev-server/client?http://localhost:${PORT}/`,
     'webpack/hot/only-dev-server',
     path.join(process.cwd(), 'app/app.dev.js')
   ],
@@ -68,11 +69,18 @@ export default merge(baseConfig, {
     publicPath
   },
 
+  resolve: {
+    alias: {
+      config: path.join(__dirname, 'config', `${NODE_ENV}.config`)
+    }
+  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      'process.env.PORT': JSON.stringify(PORT),
     }),
     // turn debug mode on.
     new webpack.LoaderOptionsPlugin({
@@ -86,7 +94,7 @@ export default merge(baseConfig, {
   ],
 
   devServer: {
-    port,
+    port: PORT,
     hot: true,
     inline: false,
     historyApiFallback: true,

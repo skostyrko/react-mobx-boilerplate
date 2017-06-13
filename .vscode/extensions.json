@@ -1,9 +1,9 @@
 {
-    "recommendations": [
-      "EditorConfig.EditorConfig",
-      "flowtype.flow-for-vscode",
-      "chenxsan.vscode-standardjs",
-      "shinnn.stylelint",
-      "Orta.vscode-jest"
-    ]
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "flowtype.flow-for-vscode",
+    "dbaeumer.vscode-eslint",
+    "shinnn.stylelint",
+    "Orta.vscode-jest"
+  ]
 }
