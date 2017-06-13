@@ -1,7 +1,8 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
-import { withKnobs, text } from '@kadira/storybook-addon-knobs'
-import { WithNotes } from '@kadira/storybook-addon-notes'
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs, text } from '@storybook/addon-knobs'
+import { WithNotes } from '@storybook/addon-notes'
 
 import SampleComponent from './SampleComponent'
 

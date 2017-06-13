@@ -158,9 +158,7 @@
       "^.+\\.jsx?$": "babel-jest",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/fileTransformer.js"
     },
-    "setupFiles": [
-
-    ],
+    "setupFiles": [],
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ]
@@ -230,5 +228,8 @@
   "lint-staged": {
     "*.{js,jsx}": "eslint",
     "*.scss": "stylelint --syntax=scss"
+  },
+  "peerDependencies": {
+    "caniuse-db": "^1.0.30000684"
   }
 }
