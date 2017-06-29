@@ -13,9 +13,9 @@ export default merge(baseConfig, {
   devtool: 'cheap-module-eval-source-map',
 
   entry: [
-    'react-hot-loader/patch',
     'babel-polyfill',
     'whatwg-fetch',
+    'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${PORT}/`,
     'webpack/hot/only-dev-server',
     path.join(process.cwd(), 'app/app.dev.js')

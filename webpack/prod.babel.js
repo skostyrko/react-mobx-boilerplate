@@ -10,9 +10,9 @@ import baseConfig from './base.babel'
 const NODE_ENV = process.env.NODE_ENV || 'production'
 
 export default merge(baseConfig, {
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
 
-  entry: ['babel-polyfill', './app/app'],
+  entry: ['whatwg-fetch', 'babel-polyfill', './app/app'],
 
   module: {
     rules: [
